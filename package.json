@@ -5,7 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "build:lib": "ng build ng-components",
+    "build:prod": "ng build --prod && npm run pack",
+    "publish:ci": "npm run build:prod && npm publish dist/auth-components/*.tgz",
+    "pack": "cd dist/auth-components && npm pack",
+    "test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
+    "test:watch": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
