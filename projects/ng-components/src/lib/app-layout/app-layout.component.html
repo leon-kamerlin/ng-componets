@@ -1,1 +1,3 @@
-<lib-inner-layout [isScreenSmall]="isScreenSmall | async"></lib-inner-layout>
+<lib-inner-layout (fullScreenToggle)="fullScreenToggle.emit()" [isScreenSmall]="isScreenSmall | async">
+  <ng-content></ng-content>
+</lib-inner-layout>

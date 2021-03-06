@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import * as Screenfull from 'screenfull';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-components-example';
+
+
+
+  async fullScreenToggle() {
+    if (Screenfull.isEnabled) {
+      await Screenfull.toggle();
+    }
+  }
+
 }

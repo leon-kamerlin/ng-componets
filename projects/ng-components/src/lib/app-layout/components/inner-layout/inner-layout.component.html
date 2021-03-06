@@ -5,44 +5,44 @@
      'collapsed-sidebar': options.collapsed,
      'side-panel-opened': sidePanelOpened,
      'side-panel-closed': !sidePanelOpened
-     }">
+    }">
 
-    <lib-header (toggleSidenav)="sideNav.toggle()" (toggleNotificationSidenav)="notifications.toggle()"></lib-header>
+  <lib-header (fullScreenToggle)="fullScreenToggle.emit()" (toggleSidenav)="sideNav.toggle()" (toggleNotificationSidenav)="notifications.toggle()"></lib-header>
 
-    <mat-sidenav-container class="app-inner">
-        <mat-sidenav #sideNav class="sidebar-panel"
-                     id="sidebar-panel"
-                     [mode]="isScreenSmall ? 'side' : 'over'"
-                     [opened]="!isOver()"
-                     (openedStart)="sidePanelOpened = true"
-                     (closedStart)="sidePanelOpened = false"
-                     (mouseover)="menuMouseOver()"
-                     (mouseout)="menuMouseOut()"
-                     [perfectScrollbar]="config"
-                     [disabled]="isScreenSmall">
+  <mat-sidenav-container class="app-inner">
+    <mat-sidenav #sideNav class="sidebar-panel"
+                 id="sidebar-panel"
+                 [mode]="isScreenSmall ? 'side' : 'over'"
+                 [opened]="!isOver()"
+                 (openedStart)="sidePanelOpened = true"
+                 (closedStart)="sidePanelOpened = false"
+                 (mouseover)="menuMouseOver()"
+                 (mouseout)="menuMouseOut()"
+                 [perfectScrollbar]="config"
+                 [disabled]="isScreenSmall">
 
 
-            <lib-menu
-                (click)="updatePS()"
-                [direction]="options.dir">
-            </lib-menu>
+      <lib-menu
+        (click)="updatePS()"
+        [direction]="options.dir">
+      </lib-menu>
 
-        </mat-sidenav>
-        <mat-sidenav
-            #notifications
-            position="end"
-            class="chat-panel"
-            mode="over"
-            opened="false">
-            {{'notifications' | translate}}
-        </mat-sidenav>
+    </mat-sidenav>
+    <mat-sidenav
+      #notifications
+      position="end"
+      class="chat-panel"
+      mode="over"
+      opened="false">
+      {{'notifications' | translate}}
+    </mat-sidenav>
 
-        <div
-            [perfectScrollbar]="config"
-            [disabled]="isScreenSmall">
+    <div
+      [perfectScrollbar]="config"
+      [disabled]="isScreenSmall">
 
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-container>
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-container>
 
 </div>

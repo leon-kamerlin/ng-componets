@@ -68,7 +68,10 @@
               "projects/ng-components-example/src/assets"
             ],
             "styles": [
-              "projects/ng-components-example/src/styles.scss"
+              "projects/ng-components-example/src/styles.scss",
+              "projects/ng-components-example/src/styles/highlightjs/material-light.css",
+              "projects/ng-components-example/src/styles/bootstrap/bootstrap.scss",
+              "projects/ng-components-example/src/styles/primer/primer.scss"
             ],
             "scripts": []
           },
