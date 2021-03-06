@@ -1,0 +1,80 @@
+<mat-sidenav-container class="sidenav-container">
+    <!-- SIDENAV -->
+
+    <mat-sidenav
+        #drawer
+        class="sidenav"
+        fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="false">
+
+        <!--Hamburger items-->
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item *ngFor="let item of items" routerLink="{{item.link}}"
+               (click)="drawer.close()" routerLinkActive="active">{{item.label}}</a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <!-- TOP TOOLBAR-->
+
+        <mat-toolbar class="mat-elevation-z4">
+            <button
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+
+
+            <!--Toolbar items-->
+            <ng-container *ngIf="!(isHandset$ | async)">
+
+                <span class="logo" routerLink="/">🎴</span>
+                <a mat-button *ngFor="let item of items" routerLink="{{item.link}}"
+                   (click)="drawer.close()" routerLinkActive="active">{{item.label}}</a>
+
+            </ng-container>
+
+
+            <span class="fill-space"></span>
+
+            <!--Right items-->
+            <a mat-button>🔒 {{'logout' | translate}}</a>
+            <a mat-button routerLink="/auth/login">🔒 {{'login' | translate}}</a>
+
+
+            <!-- DROPDOWN MENU -->
+            <button
+                mat-icon-button
+                [matMenuTriggerFor]="menu"
+                aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+                <a mat-menu-item routerLink="/profile">
+                    <span>{{'profile' | translate}}</span>
+                </a>
+
+                <a mat-menu-item routerLink="/settings">
+                    <span>{{'settings' | translate}}</span>
+                </a>
+
+                <a mat-menu-item href="https://github.com/leonkamerlinn">
+                    <span>github</span>
+                </a>
+            </mat-menu>
+
+
+        </mat-toolbar>
+
+        <!-- TRANSCLUSION -->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
