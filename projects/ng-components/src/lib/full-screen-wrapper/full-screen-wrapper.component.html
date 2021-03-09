@@ -1,0 +1,25 @@
+<div class="wrapper w-100 h-100 p-5">
+    <div class="d-flex justify-content-between">
+        <button mat-icon-button (click)="backClick.emit()" *ngIf="showBackIcon">
+            <mat-icon class="icon back">arrow_back_ios</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="closeClick.emit()" *ngIf="showCloseIcon">
+            <mat-icon class="icon close">close</mat-icon>
+        </button>
+    </div>
+
+    <div class="d-flex justify-content-center justify-content-lg-start">
+        <div class="title">
+            <h1>{{title}}</h1>
+            <h3>{{subtitle}}</h3>
+        </div>
+    </div>
+
+
+    <div class="content mt-5">
+        <ng-content></ng-content>
+    </div>
+
+</div>
+

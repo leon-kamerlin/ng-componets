@@ -5,6 +5,9 @@
 export * from './lib/shell/shell.module';
 export * from './lib/shell/shell.component';
 
+export * from './lib/full-screen-wrapper/full-screen-wrapper.component';
+export * from './lib/full-screen-wrapper/full-screen-wrapper.module';
+
 export * from './lib/delete-button/delete-button.module';
 export * from './lib/delete-button/delete-button.component';
 
