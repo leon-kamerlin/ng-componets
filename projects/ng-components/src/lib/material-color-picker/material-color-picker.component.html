@@ -1,0 +1,8 @@
+<div class="overflow-scroll">
+    <mat-button-toggle-group [disabled]="disabled" [value]="value" (valueChange)="onChangeColor($event)">
+        <mat-button-toggle *ngFor="let color of MAT_COLORS" [value]="color">
+            <mat-icon [style]="{color: color.primary}">lens</mat-icon>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
