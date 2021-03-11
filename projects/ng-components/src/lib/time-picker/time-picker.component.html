@@ -1,0 +1,17 @@
+<div>
+    <mat-form-field>
+        <mat-label>Hours</mat-label>
+        <mat-select [value]="value?.getHours()" [disabled]="disabled" (valueChange)="onHourChange($event)">
+            <mat-option *ngFor="let hour of hours" [value]="hour.value">{{ hour.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-label> :</mat-label>
+
+    <mat-form-field>
+        <mat-label>Minutes</mat-label>
+        <mat-select [value]="value?.getMinutes()" [disabled]="disabled" (valueChange)="onMinuteChange($event)">
+            <mat-option *ngFor="let minute of minutes" [value]="minute.value">{{ minute.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
