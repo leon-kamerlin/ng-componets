@@ -11,7 +11,6 @@ export * from './lib/full-screen-wrapper/full-screen-wrapper.module';
 export * from './lib/time-picker/time-picker.component';
 export * from './lib/time-picker/time-picker.module';
 
-export * from './lib/material-color-picker/mat-color';
 export * from './lib/material-color-picker/material-color-picker.component';
 export * from './lib/material-color-picker/material-color-picker.module';
 

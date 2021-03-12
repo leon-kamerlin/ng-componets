@@ -1,6 +1,6 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatColor } from './mat-color';
+import { MatColor } from 'leon-angular-utils';
 
 
 @Component({
